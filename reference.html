@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <script>
+    // numbers
+    // let age = 100
+    // let age2 = age
+    // console.log(age, age2)
+    // age = 200
+    // console.log(age, age2)
+
+    // // strings
+    // let name = 'Kends'
+    // let name2 = name
+    // console.log(name, name2)
+    // name = 'Kendra'
+    // console.log(name, name2)
+
+    // arrays
+    const players = ['Tom', 'Matt', 'Sarah', 'Ashley']
+    const team = players
+    //console.log(team, players)
+    team[3] = 'Megan'
+
+    // make a copy with slice
+    const team2 = players.slice()
+    // make a copy with concat
+    const team3 = [].concat(players)
+    // make a copy with the spread operator
+    const team4 = [...players]
+    //console.log(team4)
+    // make a copy with Array.from
+    const team5 = Array.from(players)
+    console.log(team5)
+
+    // objects
+    const person = {
+        name: "Kendra",
+        age: 35
+    }
+    // think we make a copy but we're really updating
+    const captain = person
+    //captain.age = 66
+    console.log(captain)
+    // to make a copy
+    const captain2 = Object.assign({}, person, {name: "Bug", age: 45})
+    console.log(captain2)
+    const capt3 = {...person}
+    console.log(capt3)
+
+    // NOTE: the copy above is very shallow
+    // ways to copy more deeply
+    const kends = {
+        name: "Kendra davis",
+        age: 35,
+        social: {
+            insta: "specialkviolin82",
+            twitter: '@kendsdavs'
+        }
+    }
+    console.clear()
+    console.log(kends)
+
+    // this does not clone the next layer. Need a clone deep function from lodash or below
+    // if I reassign dev.social.insta it will also be assigned in kends
+    const dev = Object.assign({}, kends)
+    // "poor mans" deep clone.  
+    // if I reassign dev.social.insta it will not be assigned in kends
+    const dev2 = JSON.parse(JSON.stringify(kends))
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>>
